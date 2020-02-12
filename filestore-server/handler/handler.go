@@ -1,15 +1,14 @@
 package handler
 
 import (
-	"net/http"
 	"io"
 	"io/ioutil"
-	"ioutil"
+	"net/http"
 )
 
 //处理文件上传
-func UploadHandler(w http.ResponseWriter, r *http.Request){
-	if r.Method == "GET"{
+func UploadHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
 		//返回上传html页面
 		data, err := ioutil.ReadFile("./static/view/index.html")
 		if err != nil {
@@ -17,8 +16,7 @@ func UploadHandler(w http.ResponseWriter, r *http.Request){
 			return
 		}
 		io.WriteString(w, string(data))
-	}
-	else if r.Method == "POST"{
+	} else if r.Method == "POST" {
 		//接收文件流及存储到本地目录
 	}
 }
